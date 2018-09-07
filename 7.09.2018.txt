@@ -1,0 +1,45 @@
+(define q2-data '(
+"8C TS KC 9H 4S 7D 2S 5D 3S AC"
+"5C AD 5D AC 9C 7C 5H 8D TD KS"
+"3H 7H 6S KC JS QH TD JC 2D 8S"))
+
+
+(define (player1 i)
+(substring (list-ref q2-data 0) 0 14)
+)
+
+(define (player2 i)
+(substring (list-ref q2-data i) 15 29)
+)
+
+
+(define (transvalue player)
+(for-each (lambda (x)
+    (if(eq x "T")
+      (string-set! x 0 10)
+      (if(eq x "J")
+       (string-set! x 0 11)
+       (if(eq x "Q")
+        (string-set! x 0 12)
+        (if(eq x "K")
+          (string-set! x 0 13)
+          (if(eq x "A")
+          (string-set! x 0 14)
+          '()
+          )
+        )
+        )
+      )
+    )
+))
+)
+
+
+;(transvalue (player2 0))
+(define test(string-copy (player1 0)))
+test
+
+
+;(display(player2 0))
+;(display " ")
+;(display(player1 0))
