@@ -1,0 +1,23 @@
+#lang racket
+(define (flush! player)
+  (let((a (string-ref player 1))
+    (b (string-ref player 4))
+    (c (string-ref player 7))
+    (d (string-ref player 10))
+    (e (string-ref player 13)))
+    (if(eqv? a b)
+       (if (eqv? b c)
+           (if(eqv? c d)
+              (if (eqv? d e)
+                  #t
+                  #f
+                  )
+              #f
+              )
+           #f
+           )
+       #f
+        )
+  ))
+
+(flush! "8C TC KC 9C 4C")
